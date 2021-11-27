@@ -28,8 +28,8 @@ public class UploadsController {
 
         List<Picture> picByStatus = uploadsService.getPictureByStatus(Status.ACCEPTED);
         List<String> urls = new ArrayList<>();
-        for (int i = 0; i < picByStatus.size(); i++) {
-            String url = picByStatus.get(i).getUrls();
+        for (Picture byStatus : picByStatus) {
+            String url = byStatus.getUrls();
             urls.add(url);
         }
         return urls;
